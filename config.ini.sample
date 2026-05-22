@@ -1,0 +1,31 @@
+# Dynamic Transfer Switch Configuration File
+# Combines transfer switch management with generator auto current derating
+
+[DeratingConstants]
+BaseTemperatureThresholdF = 77.0
+TempCoefficient = 0.006
+AltitudeCoefficient = 0.00003
+BaseGeneratorOutputAmps = 62.5
+OutputBuffer = 0.9
+HighGenTempThresholdF = 220.0
+MediumGenTempThresholdF = 212.0
+HighGenTempReduction = 0.85
+MediumGenTempReduction = 0.90
+
+[DefaultSensorValues]
+DefaultAltitudeFeet = 1000.0
+DefaultGeneratorTempF = 180.0
+DefaultOutdoorTempF = 77.0
+
+[TransferSettings]
+# Time in seconds to wait after generator stops before switching to grid
+shutdown_timer = 5
+
+# Minimum altitude change in feet to trigger derating recalculation
+altitude_buffer_ft = 50.0
+
+# Minimum temperature change in Fahrenheit to trigger derating recalculation
+temp_buffer_f = 1.0
+
+# Debounce time in milliseconds for rapid sensor changes
+derating_debounce_ms = 500
